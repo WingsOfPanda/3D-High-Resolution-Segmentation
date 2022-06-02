@@ -53,6 +53,8 @@ Part2.summary(line_length=128)
 
 print(f'tf version: {tf.__version__}')
 
+# Simply put the block of netowrk into desired GPU device with tf.device() as shown below.
+
 with tf.GradientTape() as tape:
     with tf.device('/gpu:0'):
         x0_, x1_ = Part1(input_tensor)
@@ -63,18 +65,5 @@ with tf.GradientTape() as tape:
         print(f'forward part2 done', flush=True)
 
     g = tape.gradient(ot_, Part2.trainable_variables + Part1.trainable_variables)
-    print(f'backward part1&2&3&4 done', flush=True)
-    print(g[0][0])
-
-# with tf.GradientTape() as tape:
-#     x0_, x1_ = Part1(input_tensor)
-#     print(f'forward part1 done', flush=True)
-#
-#     ot_, = Part2([x0_, x1_])
-#     print(f'forward part2 done', flush=True)
-#
-#     g0 = tape.gradient(ot_, Part2.trainable_variables + Part1.trainable_variables)
-#     print(f'backward done', flush=True)
-#
-#     print(g0[0][0])
+    print(f'backward part1&2 done', flush=True)
 
