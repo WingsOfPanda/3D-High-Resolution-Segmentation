@@ -1,6 +1,6 @@
 # building the tensorflow with device-annotation
 
-We describe the step of build the tensorflow with device annotation functionality.
+We describe the step of building the tensorflow with device annotation functionality.
 
 - clone the repo from git@github.com:WingsOfPanda/tensorflow.git
 - shift to branch 'feature/device-anotation'
