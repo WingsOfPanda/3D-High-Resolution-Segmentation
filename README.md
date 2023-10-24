@@ -1,6 +1,6 @@
 # 3D-High-Resolution-Segmentation
 
-This repository is in support of the article ''Coronary Artery Segmentation from Ultra High Resolution Medical Images"
+This repository is in support of the article ''An Energy Matching Vessel Segmentation Framework in 3D Medical Images"
 
 Including:
 
