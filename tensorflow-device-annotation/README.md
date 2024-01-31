@@ -1,16 +1,13 @@
-# building the tensorflow with device-annotation
+# Building TensorFlow with Device-Annotation Support
 
-We describe the step of building the tensorflow with device annotation functionality.
+This document outlines the steps to build TensorFlow with device annotation functionality.
 
-- clone the repo from git@github.com:WingsOfPanda/tensorflow.git
-- shift to branch 'feature/device-anotation'
-- following the instruction from [url][https://www.tensorflow.org/install/source] to build the tensorflow based on this branch
+1. Clone the repository from `git@github.com:WingsOfPanda/tensorflow.git`.
+2. Switch to the branch `feature/device-annotation`.
+3. Follow the instructions at [TensorFlow Source Installation](https://www.tensorflow.org/install/source) to build TensorFlow based on this branch.
 
+Once you have successfully built and installed this version of TensorFlow, you can verify the installation. Typing `tf.__version__` in the Python environment should display: `"2.9.0-device-annotation-mkl-support"`.
 
-After successfully built and installed this tensorflow, type 
-'tf.__version__' you should have:
-"2.9.0-device-annotation-mkl-support"
+The device-annotation feature enables users to control the placement of gradient calculations on specific devices. With this functionality, we can distribute different aspects of training (such as forward inference, gradient calculation, and backpropagation) across multiple devices, thereby mitigating Out-Of-Memory (OOM) issues.
 
-The device-annotation allows user to control the placement of gradients calculation on the spcific device. This, we can split the training, including forward inference, gradients calculation, and backpropagations, onto different devices to avoid OOM issues. 
-
-The demo.py gives a MWE of how to use device-annotation to split training.
+For a practical example, refer to `demo.py`. It provides a Minimal Working Example (MWE) demonstrating how to use the device-annotation feature to distribute training tasks.
